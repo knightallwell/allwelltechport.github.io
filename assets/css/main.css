@@ -114,6 +114,11 @@ ul {
     color: #e2e8f0;
     border-bottom: none;
     font-weight: 600;
+    padding: 0.5em 1em;       /* adds breathing space */
+    text-decoration: none;    /* clean link look */
+    white-space: nowrap;      /* keeps "Menu" together */
+    display: inline-block;    /* prevents collapsing */
+    font-size: 1em;           /* ensures readability */
 }
 
 #header nav a:hover {
@@ -473,3 +478,4 @@ ul {
     font-size: 1.1em;
     display: -webkit-box;
     display: -ms
+
