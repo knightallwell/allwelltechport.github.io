@@ -127,7 +127,7 @@ ul {
     color: #e2e8f0;
     position: fixed;
     top: 0;
-    right: -90%;
+    right: -80%;
     width: 25em;
     height: 100%;
     z-index: 1001;
@@ -474,5 +474,6 @@ ul {
     font-size: 1.1em;
     display: -webkit-box;
     display: -ms
+
 
 
