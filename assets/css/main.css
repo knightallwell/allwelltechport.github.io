@@ -110,15 +110,11 @@ ul {
     text-shadow: 0 0 8px rgba(125, 211, 252, 0.6);
 }
 
+
 #header nav a {
     color: #e2e8f0;
     border-bottom: none;
     font-weight: 600;
-    padding: 0.5em 1em;       /* adds breathing space */
-    text-decoration: none;    /* clean link look */
-    white-space: nowrap;      /* keeps "Menu" together */
-    display: inline-block;    /* prevents collapsing */
-    font-size: 1em;           /* ensures readability */
 }
 
 #header nav a:hover {
@@ -131,7 +127,7 @@ ul {
     color: #e2e8f0;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -90%;
     width: 25em;
     height: 100%;
     z-index: 1001;
@@ -478,4 +474,5 @@ ul {
     font-size: 1.1em;
     display: -webkit-box;
     display: -ms
+
 
