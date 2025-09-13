@@ -147,12 +147,43 @@ ul {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
 }
 
+/* ... (previous CSS code) ... */
+
+/* Menu */
+#menu {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    /* Adjust width for better responsiveness */
+    width: 25em; /* Original width, good for larger screens */
+    max-width: 90%; /* Crucial: Ensure it doesn't exceed screen width on small devices */
+    min-width: 15em; /* Add a minimum width to prevent it from becoming too small */
+    height: 100%;
+    z-index: 1001;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: right 0.5s ease;
+    transition: right 0.5s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    /* Add padding to the menu itself so content isn't flush with edges */
+    padding: 1em 0; /* Vertical padding, horizontal padding handled by inner */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
 #menu .inner {
-    padding: 3em 2em;
+    padding: 3em 2em; /* This padding is critical for text inside */
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
     overflow-y: auto; /* Allow scrolling for menu items if they exceed screen height */
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 #menu.visible {
@@ -164,14 +195,21 @@ ul {
     margin-bottom: 1.5em;
     text-align: center;
     font-size: 2em;
+    padding: 0 0.5em; /* Add horizontal padding to prevent text touching edges */
 }
 
 #menu .links li a {
     display: block;
-    padding: 0.8em 0;
+    padding: 0.8em 0; /* Padding for each link item */
     color: #e2e8f0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
+    /* Ensure the text within the link has internal space */
+    padding-left: 1em;
+    padding-right: 1em;
+    white-space: nowrap; /* Prevent "Home" from breaking */
+    overflow: hidden; /* Hide overflow if text is too long, though padding should prevent this */
+    text-overflow: ellipsis; /* Add ellipsis if text is cut off */
 }
 
 #menu .links li a:hover {
@@ -186,6 +224,54 @@ ul {
     color: #e2e8f0;
     font-size: 1.5em;
     border-bottom: none;
+    /* Ensure close button has space if its text is 'Close menu' */
+    padding: 0.5em;
+}
+
+/* ... (rest of the CSS code, including media queries) ... */
+
+
+/* === Media Query Adjustments for Menu Width === */
+
+/* Small devices (phones, 480px and up) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    /* ... (other styles) ... */
+    #menu {
+        width: 80%; /* Give it a bit more width on slightly larger phones */
+        max-width: 20em; /* Prevent it from getting too wide on landscape phones */
+        min-width: 12em; /* Ensure it's not too small */
+    }
+    #menu .inner {
+        padding: 2.5em 1.5em; /* Adjust inner padding for smaller screens */
+    }
+}
+
+/* Extra small devices (portrait phones, less than 480px) */
+@media screen and (max-width: 479px) {
+    /* ... (other styles) ... */
+    #menu {
+        width: 90%; /* Take up more screen real estate on very small screens */
+        max-width: 18em; /* Cap its width */
+        min-width: 10em; /* Maintain a minimum readable width */
+    }
+    #menu .inner {
+        padding: 2em 1em; /* Further reduce inner padding */
+    }
+    #menu h2 {
+        font-size: 1.8em;
+        padding: 0 0.25em; /* Reduce heading padding */
+    }
+    #menu .links li a {
+        font-size: 0.9em;
+        padding-left: 0.8em;
+        padding-right: 0.8em;
+    }
+    #menu .close {
+        font-size: 1.3em;
+        right: 1em; /* Adjust close button position */
+        top: 0.8em;
+        padding: 0.3em;
+    }
 }
 
 /* Banner Section */
@@ -849,3 +935,4 @@ ul {
         flex-direction: column;
         text-align: center;
     }
+
