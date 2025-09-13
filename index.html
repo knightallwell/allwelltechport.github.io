@@ -25,28 +25,49 @@
 		<!-- Page Wrapper -->
 		<div id="page-wrapper">
 
-			<!-- Header -->
-			<header id="header" class="alt">
-				<h1><a href="index.html">Allwell's Techport</a></h1>
-				<nav>
-					<a href="#menu">Menu</a>
+				<!-- Header -->
+				<header id="header" class="alt">
+				  <h1><a href="index.html">Allwell's Techport</a></h1>
+				  <nav aria-label="Main navigation">
+				    <!-- Use button for accessibility -->
+				    <button id="menu-toggle" aria-controls="menu" aria-expanded="false">Menu</button>
+				  </nav>
+				</header>
+				
+				<!-- Menu -->
+				<nav id="menu" class="menu" aria-label="Sidebar menu" hidden>
+				  <div class="inner">
+				    <h2>Menu</h2>
+				    <ul class="links">
+				      <li><a href="index.html">Home</a></li>
+				      <li><a href="generic.html">Generic</a></li>
+				      <li><a href="elements.html">INSIGHTS</a></li>
+				      <li><a href="#summary">About Me</a></li>
+				      <li><a href="#">Log In</a></li>
+				      <li><a href="#">Sign Up</a></li>
+				    </ul>
+				    <!-- Accessible close button -->
+				    <button class="close" aria-label="Close menu">Close</button>
+				  </div>
 				</nav>
-			</header>
-
-			<!-- Menu -->
-				<nav id="menu">
-					<div class="inner">
-						<h2>Menu</h2>
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#projects">My Impactful Projects</a></li>
-							<li><a href="#summary">About Me</a></li>
-							<li><a href="#">Log In</a></li>
-							<li><a href="#">Sign Up</a></li>
-						</ul>
-						<a href="#" class="close">Close</a>
-					</div>
-			</nav>
+				
+				<!-- Script for toggling menu -->
+				<script>
+				  const menuToggle = document.getElementById('menu-toggle');
+				  const menu = document.getElementById('menu');
+				  const closeBtn = document.querySelector('.close');
+				
+				  menuToggle.addEventListener('click', () => {
+				    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+				    menuToggle.setAttribute('aria-expanded', !expanded);
+				    menu.hidden = expanded; // toggle hidden attribute
+				  });
+				
+				  closeBtn.addEventListener('click', () => {
+				    menu.hidden = true;
+				    menuToggle.setAttribute('aria-expanded', false);
+				  });
+				</script>
 
 			<!-- Banner -->
 			<section id="banner" class="tech-banner">
@@ -172,6 +193,7 @@
 
 	</body>
 </html>
+
 
 
 
