@@ -12,6 +12,10 @@ body {
     line-height: 1.75;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+    /* Basic fluid sizing for better mobile experience */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
 }
 
 body.is-preload * {
@@ -110,7 +114,6 @@ ul {
     text-shadow: 0 0 8px rgba(125, 211, 252, 0.6);
 }
 
-
 #header nav a {
     color: #e2e8f0;
     border-bottom: none;
@@ -127,8 +130,9 @@ ul {
     color: #e2e8f0;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -100%; /* Start off-screen */
     width: 25em;
+    max-width: 80%; /* Limit width on very small screens */
     height: 100%;
     z-index: 1001;
     display: -webkit-box;
@@ -148,6 +152,7 @@ ul {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+    overflow-y: auto; /* Allow scrolling for menu items if they exceed screen height */
 }
 
 #menu.visible {
@@ -212,7 +217,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiMzMzQxNTUiIGQ9Ik0wIDBoNjR2NjRIMHoiLz48ZyBzdHJva2U9IiM0NzU1Nzg1IiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMSI+PHBhdGggZD0iTTM3LjM1IDM2LjY1bDYuMDgtNi4wOCAxNC4xNCAxNC4xNC0xNC4xNCAxNC4xNC02LjA4LTYuMDggNi4wOC02LjA4eiIvPjxwYXRoIGQ9Ik0xMy41IDMyLjk1bDYuMDgtNi4wOCA2LjA4IDYuMDgtNi4wOCA2LjA4eiIvPjxwYXRoIGQ9Ik0zMi41IDMuOTVsNi4wOC02LjA4IDYuMDggNi4wOC02LjA4IDYuMDh6Ii8+PHBhdGggZD0iTTkuOTUgMTkuNDVsNi4wOC02LjA4IDYuMDggNi4wOC02LjA4IDYuMDh6IiIvPjxwYXRoIGQ9Ik0xOC45NSA1NC44NWw2LjA4LTYuMDggNi4wOCA2LjA4LTYuMDggNi4wOHoiLz48cGF0aCBkPSJNMjkuOTUgNDUuOTVsNi4wOC02LjA4IDYuMDggNi4wOC02LjA4IDYuMDh6IiIvPjxwYXRoIGQ9Ik0yLjU1IDIzLjQ1bDYuMDgtNi4wOCA2LjA4IDYuMDgtNi4wOCA2LjA4eiIvPjxwYXRoIGQ9Ik01My45NSAyMy40NWw2LjA4LTYuMDggNi4wOCA2LjA4LTYuMDggNi4wOHoiLz48cGF0aCBkPSJNNTIuNTUgMy45NWw2LjA4LTYuMDggNi4wOCA2LjA4LTYuMDggNi4wOHoiLz48L2c+PC9nPg0KPC9zdmc+'); /* Subtle geometric pattern */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiMzMzQxNTUiIGQ9Ik0wIDBoNjR2NjRIMHoiLz48ZyBzdHJva2U9IiM0NzU1Nzg1IiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMSI+PHBhdGggZD0iTTM3LjM1IDM2LjY1bDYuMDgtNi4wOCAxNC4xNCAxNC4xNC0xNC4xNCAxNC4xNC02LjA4LTYuMDggNi4wOC02LjA4eiIvPjxwYXRoIGQ9Ik0xMy41IDMyLjk1bDYuMDgtNi4wOCA2LjA4IDYuMDgtNi4wOCA2LjA4eiIvPjxwYXRoIGQ9Ik0zMi41IDMuOTVsNi4wOC02LjA4IDYuMDggNi4wOC02LjA4IDYuMDh6IiIvPjxwYXRoIGQ9Ik05Ljk1IDE5LjQ1bDYuMDgtNi4wOCA2LjA4IDYuMDgtNi4wOCA2LjA4eiIvPjxwYXRoIGQ9Ik0xOC45NSA1NC44NWw2LjA4LTYuMDggNi4wOCA2LjA4LTYuMDggNi4wOHoiLz48cGF0aCBkPSJNMjkuOTUgNDUuOTVsNi4wOC02LjA4IDYuMDggNi4wOC02LjA4IDYuMDh6IiIvPjxwYXRoIGQ9Ik0yLjU1IDIzLjQ1bDYuMDgtNi4wOCA2LjA4IDYuMDgtNi4wOCA2LjA4eiIvPjxwYXRoIGQ9Ik01My45NSAyMy40NWw2LjA4LTYuMDggNi4wOCA2LjA4LTYuMDggNi4wOHoiLz48cGF0aCBkPSJNNTIuNTUgMy45NWw2LjA4LTYuMDggNi4wOCA2LjA4LTYuMDggNi4wOHGgC4wOHoiLz48L2c+PC9nPg0KPC9zdmc+'); /* Subtle geometric pattern */
     background-size: cover;
     opacity: 0.15; /* Make it subtle */
     z-index: -1;
@@ -228,6 +233,8 @@ ul {
     padding-top: 3.5em;
     position: relative;
     z-index: 2;
+    /* Adjust max-width for smaller screens */
+    max-width: 90%;
 }
 
 #banner .logo {
@@ -277,6 +284,7 @@ ul {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1em; /* Add horizontal padding for smaller screens */
 }
 
 .project-grid {
@@ -347,6 +355,9 @@ ul {
 .project-card .button {
     margin: 0 1.5em 1.5em 1.5em;
     text-align: center;
+    width: auto; /* Allow button to naturally size */
+    max-width: 100%; /* Prevent overflow */
+    box-sizing: border-box; /* Include padding/border in width */
 }
 
 .actions.centered-actions {
@@ -428,7 +439,6 @@ ul {
     z-index: 0;
 }
 
-
 #footer .inner {
     position: relative;
     z-index: 1;
@@ -443,6 +453,7 @@ ul {
     max-width: 800px;
     margin: 0 auto 3em auto;
     font-size: 1.1em;
+    padding: 0 1em; /* Add horizontal padding for smaller screens */
 }
 
 .contact-form-embed {
@@ -451,10 +462,15 @@ ul {
     padding: 1.5em;
     margin-bottom: 3em;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 90%; /* Ensure it doesn't overflow */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-form-embed iframe {
     border-radius: 5px;
+    width: 100%; /* Make iframe responsive */
+    height: 500px; /* Adjust height as needed, or make it dynamic with JS */
 }
 
 #footer .contact {
@@ -467,14 +483,369 @@ ul {
     -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 3em;
+    padding: 0 1em; /* Add horizontal padding */
 }
 
 #footer .contact li {
     margin: 0 1.5em 1.5em 1.5em;
     font-size: 1.1em;
     display: -webkit-box;
-    display: -ms
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#footer .contact li .icon {
+    margin-right: 0.5em;
+    color: #38bdf8;
+}
+
+#footer .copyright {
+    font-size: 0.9em;
+    color: #64748b;
+}
+
+#footer .copyright li {
+    display: inline-block;
+    margin: 0 0.75em;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 0.75em;
+}
+
+#footer .copyright li:first-child {
+    border-left: none;
+    padding-left: 0;
+}
 
 
+/* Media Queries for Responsiveness */
+
+/* Extra large devices (large desktops, TVs, 1200px and up) */
+@media screen and (min-width: 1201px) {
+    body {
+        font-size: 18px;
+    }
+    #header {
+        height: 4em;
+        padding: 0 3em;
+    }
+    #header h1 {
+        font-size: 1.8em;
+    }
+    #banner {
+        padding: 12em 0 10em 0;
+    }
+    #banner .logo {
+        font-size: 5em;
+    }
+    #banner h2 {
+        font-size: 4em;
+    }
+    .wrapper {
+        padding: 8em 0;
+    }
+    .project-grid {
+        gap: 4em;
+    }
+    .project-card h3 {
+        font-size: 1.7em;
+    }
+}
 
 
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+    #header {
+        padding: 0 2em;
+    }
+    #banner {
+        padding: 9em 0 7em 0;
+    }
+    #banner .logo {
+        font-size: 3.5em;
+    }
+    #banner h2 {
+        font-size: 3em;
+    }
+    .wrapper {
+        padding: 6em 0;
+    }
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for desktops */
+        gap: 2.5em;
+    }
+    .project-card h3 {
+        font-size: 1.4em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+        font-size: 15px;
+    }
+    #header {
+        height: 3.5em;
+        padding: 0 1.5em;
+    }
+    #header h1 {
+        font-size: 1.3em;
+    }
+    #banner {
+        padding: 8em 0 6em 0;
+    }
+    #banner .logo {
+        font-size: 3em;
+    }
+    #banner h2 {
+        font-size: 2.5em;
+    }
+    #banner p {
+        font-size: 1.2em;
+    }
+    .wrapper {
+        padding: 5em 0;
+    }
+    .wrapper .inner {
+        width: 90%;
+    }
+    h1.major, h2.major, h3.major {
+        font-size: 2em;
+    }
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* At least 320px wide, or 1 column */
+        gap: 2em;
+    }
+    .project-card h3 {
+        font-size: 1.3em;
+        padding: 1em;
+    }
+    .project-card p {
+        padding: 0 1em 1em 1em;
+    }
+
+    .about-me-section .inner {
+        flex-direction: column; /* Stack image and content */
+        text-align: center;
+    }
+    .about-me-section .image {
+        width: 60%; /* Take more width */
+        margin-right: 0;
+        margin-bottom: 3em; /* Space between image and text */
+    }
+    .about-me-section .image .profile-pic {
+        max-width: 250px;
+    }
+    .about-me-section .content {
+        width: 90%; /* Take more width */
+        text-align: center;
+    }
+    .about-me-section h2 {
+        text-align: center;
+    }
+
+    #footer .contact {
+        flex-direction: column; /* Stack contact items */
+        align-items: center;
+    }
+    #footer .contact li {
+        margin: 0.5em 0; /* Adjust margin for stacking */
+    }
+    #footer .copyright li {
+        display: block; /* Stack copyright items */
+        border-left: none;
+        padding-left: 0;
+        margin: 0.25em 0;
+    }
+}
+
+/* Small devices (phones, 480px and up) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+    #header {
+        height: 3em;
+        padding: 0 1em;
+    }
+    #header h1 {
+        font-size: 1.2em;
+    }
+    #header nav a {
+        padding: 0.5em 1em;
+    }
+    #banner {
+        padding: 6em 0 4em 0;
+    }
+    #banner .logo {
+        font-size: 2.5em;
+    }
+    #banner h2 {
+        font-size: 2em;
+    }
+    #banner p {
+        font-size: 1em;
+        padding: 0 1em;
+    }
+    .wrapper {
+        padding: 4em 0;
+    }
+    .wrapper .inner {
+        width: 95%;
+    }
+    h1.major, h2.major, h3.major {
+        font-size: 1.8em;
+        margin-bottom: 1em;
+    }
+    .section-description {
+        margin-bottom: 2em;
+        font-size: 1em;
+        padding: 0 0.5em;
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column layout for phones */
+        gap: 1.5em;
+    }
+    .project-card h3 {
+        font-size: 1.2em;
+        padding: 1em;
+    }
+    .project-card p {
+        font-size: 0.9em;
+        padding: 0 1em 1em 1em;
+    }
+    .project-card .button {
+        font-size: 0.9em;
+        padding: 0.8em 1.2em;
+    }
+
+    .about-me-section .inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-me-section .image {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 2em;
+    }
+    .about-me-section .image .profile-pic {
+        max-width: 200px;
+    }
+    .about-me-section .content {
+        width: 95%;
+        text-align: center;
+    }
+    .about-me-section h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .about-me-section p {
+        font-size: 0.95em;
+    }
+
+    #footer {
+        padding: 4em 0 2em 0;
+    }
+    #footer h2.major {
+        font-size: 1.8em;
+    }
+    #footer .footer-description {
+        font-size: 1em;
+        margin-bottom: 2em;
+        padding: 0 0.5em;
+    }
+    .contact-form-embed {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+    .contact-form-embed iframe {
+        height: 400px; /* Make iframe height adjustable for smaller screens */
+    }
+    #footer .contact {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2em;
+    }
+    #footer .contact li {
+        font-size: 1em;
+        margin: 0.4em 0;
+    }
+    #footer .copyright li {
+        font-size: 0.8em;
+        display: block;
+        border-left: none;
+        padding-left: 0;
+        margin: 0.2em 0;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 480px) */
+@media screen and (max-width: 479px) {
+    body {
+        font-size: 13px;
+    }
+    #header {
+        height: 2.8em;
+        padding: 0 0.8em;
+    }
+    #header h1 {
+        font-size: 1.1em;
+    }
+    #header nav a {
+        padding: 0.4em 0.8em;
+    }
+    #banner {
+        padding: 5em 0 3em 0;
+    }
+    #banner .logo {
+        font-size: 2em;
+    }
+    #banner h2 {
+        font-size: 1.8em;
+    }
+    #banner p {
+        font-size: 0.9em;
+        padding: 0 0.8em;
+    }
+    .wrapper {
+        padding: 3em 0;
+    }
+    .wrapper .inner {
+        width: 98%;
+        padding: 0 0.5em;
+    }
+    h1.major, h2.major, h3.major {
+        font-size: 1.5em;
+        margin-bottom: 0.8em;
+    }
+    .section-description {
+        margin-bottom: 1.5em;
+        font-size: 0.9em;
+        padding: 0 0.5em;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+    .project-card h3 {
+        font-size: 1.1em;
+        padding: 0.8em;
+    }
+    .project-card p {
+        font-size: 0.85em;
+        padding: 0 0.8em 0.8em 0.8em;
+    }
+    .project-card .button {
+        font-size: 0.85em;
+        padding: 0.7em 1em;
+    }
+
+    .about-me-section .inner {
+        flex-direction: column;
+        text-align: center;
+    }
