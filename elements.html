@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	MidKnightTechport 
 -->
 <html>
 	<head>
@@ -11,240 +9,337 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- Google Fonts for a modern look - important for consistency -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@404;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 	</head>
 	<body class="is-preload">
 
 		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+		<div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">INSIGHT</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+			<!-- Header - UPDATED -->
+			<header id="header" class="alt"> <!-- Keep 'alt' for consistency with main page if needed for scroll effect -->
+				<h1><a href="index.html">INSIGHT</a></h1>
+				<nav aria-label="Main navigation">
+					<button id="menu-toggle" aria-controls="menu" aria-expanded="false">
+						<span class="fas fa-bars"></span> Menu
+					</button>
+				</nav>
+			</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">INSIGHTS</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+			<!-- Menu - UPDATED -->
+			<nav id="menu" class="menu" aria-label="Sidebar menu">
+				<div class="inner">
+					<h2>Menu</h2>
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Journey</a></li> <!-- Changed 'Generic' to 'Journey' for consistency -->
+						<li><a href="elements.html">INSIGHTS</a></li>
+						<li><a href="#summary">About Me</a></li> <!-- Added About Me link -->
+						<!-- Consider replacing these with dynamic content or removing if not functional -->
+						<!-- <li><a href="#">Log In</a></li> -->
+						<!-- <li><a href="#">Sign Up</a></li> -->
+					</ul>
+					<button class="close" aria-label="Close menu">
+						<span class="fas fa-times"></span> Close
+					</button>
+				</div>
+			</nav>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>INSIGHT</h2>
-								<p>KEEP AN OPEN MIND</p>
+			<!-- Wrapper -->
+			<section id="wrapper">
+				<header>
+					<div class="inner">
+						<h2>INSIGHT</h2>
+						<p>KEEP AN OPEN MIND</p>
+					</div>
+				</header>
+
+				<!-- Content -->
+				<div class="wrapper">
+					<div class="inner">
+
+						<section>
+							<h3 class="major">MEET ME ON FIVERR</h3>
+							<p>Looking for data-driven solutions, insightful analytics, or AI-powered innovations? Connect with me on <a href="https://www.fiverr.com/s/R792zwx">Fiverr</a>, where I bring my expertise in data science, AI, and finance to deliver exceptional results tailored to your needs </p>
+							<h4>NOTICE</h4>
+							<blockquote>I also offer poetry writing and other creative services on Fiverr, combining artistry with passion to deliver captivating pieces. If you'd like to explore my work or patronize my services, feel free to view <a href="https://knightallwell.github.io/AllwellWrites/">my website</a>. Let’s create something extraordinary together!</blockquote>
+						</section>
+
+						<section>
+							<h3 class="major">Principal Computation Explored</h3>
+							<h4>Default</h4>
+							<div class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Stage</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Data Collection</td>
+											<td>Gathering relevant data from reliable sources to provide a solid foundation for analysis.</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>Exploratory Data Analysis</td>
+											<td>Analyzing and visualizing data to uncover patterns, trends, and anomalies.</td>
+											<td>2</td>
+										</tr>
+										<tr>
+											<td>Wrangling</td>
+											<td>Cleaning and organizing raw data into a structured format for analysis.</td>
+											<td>3</td>
+										</tr>
+										<tr>
+											<td>Feature Engineering</td>
+											<td>Creating and refining variables to improve model accuracy and performance.</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td>Predictive modeling</td>
+											<td>Applying machine learning algorithms for predictions (supervised) or discovering patterns (unsupervised).</td>
+											<td>5</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>80%</td>
+										</tr>
+									</tfoot>
+								</table>
 							</div>
-						</header>
 
-						<!-- Content -->
-							<div class="wrapper">
-								<div class="inner">
+							<h4>Tools</h4>
+							<div class="table-wrapper">
+								<table class="alt">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Soft skills</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>MySQL</td>
+											<td>A robust relational database management system used to store, retrieve, and manage structured data.</td>
+											<td>analytical thinking</td>
+										</tr>
+										<tr>
+											<td>Tableau and Power BI </td>
+											<td>A data visualization platform that turns complex datasets into easy-to-understand, interactive visual representations.</td>
+											<td>Active communication</td>
+										</tr>
+										<tr>
+											<td>Microsoft office</td>
+											<td>A versatile suite for creating documents, presentations, and managing data with tools like Word, Excel, and PowerPoint.</td>
+											<td>Leadership</td>
+										</tr>
+										<tr>
+											<td>Spreadsheet</td>
+											<td>Essential for organizing, analyzing, and processing data efficiently in formats like Excel or Google Sheets.</td>
+											<td>Persistence</td>
+										</tr>
+										<tr>
+											<td>IBM SPSS</td>
+											<td>A powerful tool for statistical analysis and predictive modeling, ideal for data-driven decision-making.</td>
+											<td>Research</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>80%</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</section>
 
-									<section>
-										<h3 class="major">MEET ME ON FIVERR</h3>
-										<p>Looking for data-driven solutions, insightful analytics, or AI-powered innovations? Connect with me on <a href="https://www.fiverr.com/s/R792zwx">Fiverr</a>, where I bring my expertise in data science, AI, and finance to deliver exceptional results tailored to your needs </p>
-										<h4>NOTICE</h4>
-										<blockquote>I also offer poetry writing and other creative services on Fiverr, combining artistry with passion to deliver captivating pieces. If you'd like to explore my work or patronize my services, feel free to view <a href="https://knightallwell.github.io/AllwellWrites/">my website</a>. Let’s create something extraordinary together!</blockquote>
+						<section>
+							<h3 class="major">Platforms, Libraries and Languages Explored</h3>
+							<ul class="actions">
+								<li><a href="https://jupyter.org/" class="button primary">Jupyter Notebook</a></li>
+								<li><a href="https://code.visualstudio.com/" class="button">Visual Studio Code</a></li>
+							</ul>
+							<ul class="actions">
+								<li><a href="https://cloud.google.com/gcp?utm_source=bing&utm_medium=cpc&utm_campaign=emea-ng-all-en-bkws-all-all-trial-e-gcp-1011340&utm_content=text-ad-none-any-DEV_c-CRE_-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-+GCP+-+General+-+v1-KWID_43700061984001168-kwd-77172171581812:loc-137-userloc_152628&utm_term=KW_google+cloud-NET_o-PLAC_&&cm_mmc=BE-PPC-DS3A-_-google-_-1707574+%7C+GCP+%7C+DR+%7C+ESS01+%7C+EMEA+%7C+NG+%7C+en+%7C+Hybrid+%7C+SEM+%7C+BKWS+-+EXA+%7C+Txt%7C+Bing_Pure_Brand_Non+Affected-_-Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-+GCP+-+General+-+v1-_-google+cloud&matchtype=e&kwd-77172171581812:loc-137&gclid=d899ee6cabf11f6163cd89339c3006ac&gclsrc=3p.ds&msclkid=d899ee6cabf11f6163cd89339c3006ac&hl=en" class="button large">Google cloud</a></li>
+								<li><a href="https://colab.research.google.com/" class="button small">Google Colab</a></li>
+								<li><a href="https://skills.network/" class="button small">skills Network lab</a></li>
+							</ul>
+							<ul class="actions fit">
+								<li><a href="https://pandas.pydata.org/" class="button fit">Pandas</a></li>
+								<li><a href="https://numpy.org/" class="button primary fit">Numpy</a></li>
+								<li><a href="https://scikit-learn.org/stable/index.html" class="button fit">scikit learn</a></li>
+							</ul>
+							<ul class="actions fit small">
+								<li><a href="https://matplotlib.org/" class="button primary fit small">Matplotlib</a></li>
+								<li><a href="https://pypi.org/project/folium/" class="button fit small">Folium</a></li>
+								<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html" class="button primary fit small">GridSearchCV</a></li>
+							</ul>
+							<ul class="actions">
+								<li><a href="https://www.python.org/" class="button primary icon solid fa-download">Python</a></li>
+								<li><a href="https://www.mysql.com/" class="button icon solid fa-download">SQL</a></li>
+							</ul>
+						</section>
 
-									<section>
-										<h3 class="major">Principal Computation Explored</h3>
-										<h4>Default</h4>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Stage</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Data Collection</td>
-														<td>Gathering relevant data from reliable sources to provide a solid foundation for analysis.</td>
-														<td>1</td>
-													</tr>
-													<tr>
-														<td>Exploratory Data Analysis</td>
-														<td>Analyzing and visualizing data to uncover patterns, trends, and anomalies.</td>
-														<td>2</td>
-													</tr>
-													<tr>
-														<td>Wrangling</td>
-														<td> Cleaning and organizing raw data into a structured format for analysis.</td>
-														<td>3</td>
-													</tr>
-													<tr>
-														<td>Feature Engineering</td>
-														<td>Creating and refining variables to improve model accuracy and performance.</td>
-														<td>4</td>
-													</tr>
-													<tr>
-														<td>Predictive modeling</td>
-														<td>Applying machine learning algorithms for predictions (supervised) or discovering patterns (unsupervised).</td>
-														<td>5</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>80%</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
+						<section>
+							<h3 class="major">Image</h3>
+							<h4>Fit</h4>
+							<div class="box alt">
+								<div class="row gtr-uniform">
 
-										<h4>Tools</h4>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Soft skills</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>MySQL</td>
-														<td>A robust relational database management system used to store, retrieve, and manage structured data.</td>
-														<td>analytical thinking</td>
-													</tr>
-													<tr>
-														<td>Tableau and Power BI </td>
-														<td>A data visualization platform that turns complex datasets into easy-to-understand, interactive visual representations.</td>
-														<td>Active communication</td>
-													</tr>
-													<tr>
-														<td>Microsoft office</td>
-														<td> A versatile suite for creating documents, presentations, and managing data with tools like Word, Excel, and PowerPoint.</td>
-														<td>Leadership</td>
-													</tr>
-													<tr>
-														<td>Spreadsheet</td>
-														<td>Essential for organizing, analyzing, and processing data efficiently in formats like Excel or Google Sheets.</td>
-														<td>Persistence</td>
-													</tr>
-													<tr>
-														<td>IBM SPSS</td>
-														<td>A powerful tool for statistical analysis and predictive modeling, ideal for data-driven decision-making.</td>
-														<td>Research</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>80%</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
-
-									<section>
-										<h3 class="major">Platforms, Libraries and Languages Explored</h3>
-										<ul class="actions">
-											<li><a href="https://jupyter.org/" class="button primary">Jupyter Notebook</a></li>
-											<li><a href="https://code.visualstudio.com/" class="button">Visual Studio Code</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="https://cloud.google.com/gcp?utm_source=bing&utm_medium=cpc&utm_campaign=emea-ng-all-en-bkws-all-all-trial-e-gcp-1011340&utm_content=text-ad-none-any-DEV_c-CRE_-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-+GCP+-+General+-+v1-KWID_43700061984001168-kwd-77172171581812:loc-137-userloc_152628&utm_term=KW_google+cloud-NET_o-PLAC_&&cm_mmc=BE-PPC-DS3A-_-google-_-1707574+%7C+GCP+%7C+DR+%7C+ESS01+%7C+EMEA+%7C+NG+%7C+en+%7C+Hybrid+%7C+SEM+%7C+BKWS+-+EXA+%7C+Txt%7C+Bing_Pure_Brand_Non+Affected-_-Hybrid+%7C+BKWS+-+EXA+%7C+Txt+-+GCP+-+General+-+v1-_-google+cloud&matchtype=e&kwd-77172171581812:loc-137&gclid=d899ee6cabf11f6163cd89339c3006ac&gclsrc=3p.ds&msclkid=d899ee6cabf11f6163cd89339c3006ac&hl=en" class="button large">Google cloud</a></li>
-											<li><a href="https://colab.research.google.com/" class="button small">Google Colab</a></li>
-											<li><a href="https://skills.network/" class="button small">skills Network lab</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="https://pandas.pydata.org/" class="button fit">Pandas</a></li>
-											<li><a href="https://numpy.org/" class="button primary fit">Numpy</a></li>
-											<li><a href="https://scikit-learn.org/stable/index.html" class="button fit">scikit learn</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="https://matplotlib.org/" class="button primary fit small">Matplotlib</a></li>
-											<li><a href="https://pypi.org/project/folium/" class="button fit small">Folium</a></li>
-											<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html" class="button primary fit small">GridSearchCV</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="https://www.python.org/" class="button primary icon solid fa-download">Python</a></li>
-											<li><a href="https://www.mysql.com/" class="button icon solid fa-download">SQL</a></li>
-										</ul>
-										
-									<section>
-										<h3 class="major">Image</h3>
-										<h4>Fit</h4>
-										<div class="box alt">
-											<div class="row gtr-uniform">
-											
-												<div class="col-4"><span class="image fit"><img src="images/5 (2).png" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/s1 (3).png" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/map.png" alt="" /></span></div>	
-												<div class="col-4"><span class="image fit"><img src="images/5 (5).png" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/5 (6).png" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/s1 (1).png" alt="" /></span></div>
-												
-											</div>
-										</div>
-										<h4>CONCLUSION</h4>
-										<p><span class="image left"><img src="images/my2.jpg" alt="" /></span>With a solid foundation in accounting, data science and AI, I am uniquely positioned to bridge the gap between financial expertise and cutting-edge technology. My journey reflects a blend of academic rigor, hands-on project experience, and a deep passion for solving complex business problems. Having honed skills in data analysis, machine learning, and AI applications, alongside certifications like the IBM Data Science Professional Certificate, I bring a strategic mindset to areas such as fraud detection, risk management, and AI-driven financial modeling.
-
-											Beyond my professional pursuits, I am a lover of art and an avid poet. I find inspiration in the elegance of words and the power of creativity, which mirrors my approach to solving challenges in data science—combining analytical precision with imaginative thinking. This passion for art fuels my ability to see patterns and stories in data, allowing me to deliver insights that resonate with meaning and purpose.</p>
-										<p><span class="image right"><img src="images/POETRY.jpg" alt="" /></span>My professional experience, including roles in auditing, hospitality management, and cybersecurity, demonstrates adaptability, problem-solving, and leadership—key qualities that I carry into my work as an aspiring data scientist in finance. Currently pursuing an MBA with a specialization in Artificial Intelligence, Fintech, and Blockchain at Nexford University, I am committed to continuous learning and innovation, ensuring I remain at the forefront of emerging technologies.
-
-											With this unique combination of skills, knowledge, and dedication, I am confident in my ability to deliver data-driven solutions that create tangible value for businesses and society, while advancing the dynamic field of data science. My capability lies in my determination to learn, my ability to adapt, and my unwavering focus on delivering excellence in every endeavor.</p>
-											
-										<p>Thank you for visiting my website and for taking the time to learn more about my journey. I look forward to opportunities to connect, collaborate, and create impactful solutions together.</p>
-									</section>
+									<div class="col-4"><span class="image fit"><img src="images/5 (2).png" alt="Data visualization sample 1" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/s1 (3).png" alt="Data visualization sample 2" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/map.png" alt="Geospatial data map" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/5 (5).png" alt="Data visualization sample 3" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/5 (6).png" alt="Data visualization sample 4" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="images/s1 (1).png" alt="Data visualization sample 5" /></span></div>
 
 								</div>
 							</div>
+							<h4>CONCLUSION</h4>
+							<p><span class="image left"><img src="images/my2.jpg" alt="Godwin Allwell profile picture" /></span>With a solid foundation in accounting, data science and AI, I am uniquely positioned to bridge the gap between financial expertise and cutting-edge technology. My journey reflects a blend of academic rigor, hands-on project experience, and a deep passion for solving complex business problems. Having honed skills in data analysis, machine learning, and AI applications, alongside certifications like the IBM Data Science Professional Certificate, I bring a strategic mindset to areas such as fraud detection, risk management, and AI-driven financial modeling.
 
-					</section>
+								Beyond my professional pursuits, I am a lover of art and an avid poet. I find inspiration in the elegance of words and the power of creativity, which mirrors my approach to solving challenges in data science—combining analytical precision with imaginative thinking. This passion for art fuels my ability to see patterns and stories in data, allowing me to deliver insights that resonate with meaning and purpose.</p>
+							<p><span class="image right"><img src="images/POETRY.jpg" alt="Poetry book or artistic representation" /></span>My professional experience, including roles in auditing, hospitality management, and cybersecurity, demonstrates adaptability, problem-solving, and leadership—key qualities that I carry into my work as an aspiring data scientist in finance. Currently pursuing an MBA with a specialization in Artificial Intelligence, Fintech, and Blockchain at Nexford University, I am committed to continuous learning and innovation, ensuring I remain at the forefront of emerging technologies.
 
-								<!-- Footer -->
-								<section id="footer">
-									<div class="inner">
-										<h2 class="major">Get in touch</h2>
-										<p>
-											For inquiries or to discuss potential collaborations, please get in touch. Your engagement is valued, and I look forward to exploring how we can work together to achieve exceptional results.</p>
-										<iframe src="https://fm.addxt.com/form/?vf=1FAIpQLSdQhIjUhT2yr2wKkbGejwP_pKoEPnM6RCuLgItYwItf0HL6ng" width="200" height="800" frameborder="0" marginheight="0" marginwidth="0" style="margin-bottom: 20px;">Loading…</iframe>
-										<ul class="contact">
-											<li class="icon solid fa-home">
-												Address<br />
-												Lagos, Nigeria<br />
-												
-											</li>
-											<li class="icon solid fa-phone">(701) 320-4388</li>
-											<li class="icon solid fa-envelope"><a href="allwellgodwin37@gmail.com">allwellgodwin37@gmail.com</a></li>
-											<li class="icon brands fa-linkedin"><a href="www.linkedin.com/in/godwin-allwell-808853241">linkedin</a></li>
-											<li class="icon brands fa-facebook-"><a href="#"></a></li>
-											<li class="icon brands f-instagram"><a href="#"></a></li>
-										</ul>
-										<ul class="copyright">
-											<li>&copy; MidKnighttechport Inc. All rights reserved.</li><li>Data management services: <a href="www.linkedin.com/in/godwin-allwell-808853241">Data</a></li>
-										</ul>
-									</div>
-								</section>
-			
-						</div>
-			
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+								With this unique combination of skills, knowledge, and dedication, I am confident in my ability to deliver data-driven solutions that create tangible value for businesses and society, while advancing the dynamic field of data science. My capability lies in my determination to learn, my ability to adapt, and my unwavering focus on delivering excellence in every endeavor.</p>
+
+							<p>Thank you for visiting my website and for taking the time to learn more about my journey. I look forward to opportunities to connect, collaborate, and create impactful solutions together.</p>
+						</section>
+
+					</div>
+				</div>
+
+			</section>
+
+			<!-- Footer - ALIGNED WITH MAIN.HTML -->
+			<section id="footer" class="futuristic-footer"> <!-- Added futuristic-footer class for consistency -->
+				<div class="inner">
+					<h2 class="major">Get in touch</h2>
+					<p class="footer-description"> <!-- Added footer-description class for consistency -->
+						For inquiries or to discuss potential collaborations, please get in touch. Your engagement is valued, and I look forward to exploring how we can work together to achieve exceptional results.</p>
+
+					<!-- Modernized Contact Form Embed - adjusted width/height -->
+					<div class="contact-form-embed">
+						<!-- Ensure this iframe is responsive; the main.css handles this. -->
+						<iframe src="https://fm.addxt.com/form/?vf=1FAIpQLSdQhIjUhT2yr2wKkbGejwP_pKoEPnM6RCuLgItYwItf0HL6ng" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+					</div>
+
+					<ul class="contact">
+						<li class="icon solid fa-map-marker-alt"> <!-- Changed to more consistent icon -->
+							Lagos, Nigeria
+						</li>
+						<li class="icon solid fa-phone">(701) 320-4388</li>
+						<li class="icon solid fa-envelope"><a href="mailto:allwellgodwin37@gmail.com">allwellgodwin37@gmail.com</a></li> <!-- Added mailto: -->
+						<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/allwell-godwin-808853241">linkedin.com/in/allwell-godwin</a></li> <!-- Corrected URL and text -->
+						<!-- Corrected social media icons -->
+						<!-- Removed empty social media links or ones without working URLs for cleaner code -->
+					</ul>
+					<ul class="copyright">
+						<li>&copy; MidKnighttechport Inc. All rights reserved.</li>
+						<li>Data Management Services: <a href="https://www.linkedin.com/in/allwell-godwin-808853241">Allwell Godwin</a></li> <!-- Corrected URL and text -->
+					</ul>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts - Menu script added here for consistency -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Script for toggling menu - ADDED -->
+		<script>
+			const menuToggle = document.getElementById('menu-toggle');
+			const menu = document.getElementById('menu');
+			const closeBtn = document.querySelector('#menu .close'); // Specific selector for close button inside menu
+			const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+			let firstFocusableElement;
+			let lastFocusableElement;
+			let previouslyFocusedElement;
+
+			function toggleMenu() {
+				const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+
+				menuToggle.setAttribute('aria-expanded', !isExpanded);
+				menu.classList.toggle('visible'); // Toggle the 'visible' class
+
+				if (!isExpanded) {
+					// Menu is opening
+					previouslyFocusedElement = document.activeElement; // Save reference to the element that was focused before opening
+					const focusableContent = menu.querySelectorAll(focusableElements);
+					firstFocusableElement = focusableContent[0];
+					lastFocusableElement = focusableContent[focusableContent.length - 1];
+					if (firstFocusableElement) {
+						firstFocusableElement.focus(); // Move focus into the menu
+					}
+					document.addEventListener('keydown', handleKeydown);
+				} else {
+					// Menu is closing
+					if (previouslyFocusedElement) {
+						previouslyFocusedElement.focus(); // Return focus to the element that opened the menu
+					}
+					document.removeEventListener('keydown', handleKeydown);
+				}
+			}
+
+			function closeMenu() {
+				if (menu.classList.contains('visible')) {
+					menuToggle.setAttribute('aria-expanded', false);
+					menu.classList.remove('visible');
+					if (previouslyFocusedElement) {
+						previouslyFocusedElement.focus();
+					}
+					document.removeEventListener('keydown', handleKeydown);
+				}
+			}
+
+			function handleKeydown(event) {
+				const isTabPressed = (event.key === 'Tab' || event.keyCode === 9);
+				const isEscapePressed = (event.key === 'Escape' || event.keyCode === 27);
+
+				if (isEscapePressed) {
+					closeMenu();
+					return;
+				}
+
+				if (!isTabPressed) {
+					return;
+				}
+
+				if (event.shiftKey) { // Shift + Tab
+					if (document.activeElement === firstFocusableElement) {
+						lastFocusableElement.focus();
+						event.preventDefault();
+					}
+				} else { // Tab
+					if (document.activeElement === lastFocusableElement) {
+						firstFocusableElement.focus();
+						event.preventDefault();
+					}
+				}
+			}
+
+			menuToggle.addEventListener('click', toggleMenu);
+			closeBtn.addEventListener('click', closeMenu);
+
+			// Optional: Close menu when a link inside it is clicked (assumes navigation)
+			const menuLinks = menu.querySelectorAll('.links a');
+			menuLinks.forEach(link => {
+				link.addEventListener('click', closeMenu);
+			});
+		</script>
 
 	</body>
 </html>
