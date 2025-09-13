@@ -30,12 +30,15 @@
 				  <h1><a href="index.html">Allwell's Techport</a></h1>
 				  <nav aria-label="Main navigation">
 				    <!-- Use button for accessibility -->
-				    <button id="menu-toggle" aria-controls="menu" aria-expanded="false">Menu</button>
+				    <button id="menu-toggle" aria-controls="menu" aria-expanded="false">
+				      <span class="fas fa-bars"></span> Menu <!-- Added an icon for visual cue -->
+				    </button>
 				  </nav>
 				</header>
 				
 				<!-- Menu -->
-				<nav id="menu" class="menu" aria-label="Sidebar menu" hidden>
+				<!-- Removed 'hidden' attribute, will be controlled by 'visible' class -->
+				<nav id="menu" class="menu" aria-label="Sidebar menu">
 				  <div class="inner">
 				    <h2>Menu</h2>
 				    <ul class="links">
@@ -47,26 +50,99 @@
 				      <li><a href="#">Sign Up</a></li>
 				    </ul>
 				    <!-- Accessible close button -->
-				    <button class="close" aria-label="Close menu">Close</button>
+				    <button class="close" aria-label="Close menu">
+				      <span class="fas fa-times"></span> Close <!-- Added an icon -->
+				    </button>
 				  </div>
 				</nav>
 				
-				<!-- Script for toggling menu -->
+				<!-- Script for toggling menu (place before </body> tag for best practice) -->
 				<script>
 				  const menuToggle = document.getElementById('menu-toggle');
 				  const menu = document.getElementById('menu');
-				  const closeBtn = document.querySelector('.close');
+				  const closeBtn = document.querySelector('#menu .close'); // Specific selector for close button inside menu
+				  const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+				  let firstFocusableElement;
+				  let lastFocusableElement;
+				  let previouslyFocusedElement;
 				
-				  menuToggle.addEventListener('click', () => {
-				    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-				    menuToggle.setAttribute('aria-expanded', !expanded);
-				    menu.hidden = expanded; // toggle hidden attribute
+				  function toggleMenu() {
+				    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+				
+				    menuToggle.setAttribute('aria-expanded', !isExpanded);
+				    menu.classList.toggle('visible'); // Toggle the 'visible' class
+				
+				    if (!isExpanded) {
+				      // Menu is opening
+				      previouslyFocusedElement = document.activeElement; // Save reference to the element that was focused before opening
+				      const focusableContent = menu.querySelectorAll(focusableElements);
+				      firstFocusableElement = focusableContent[0];
+				      lastFocusableElement = focusableContent[focusableContent.length - 1];
+				      if (firstFocusableElement) {
+				        firstFocusableElement.focus(); // Move focus into the menu
+				      }
+				      document.addEventListener('keydown', handleKeydown);
+				    } else {
+				      // Menu is closing
+				      if (previouslyFocusedElement) {
+				        previouslyFocusedElement.focus(); // Return focus to the element that opened the menu
+				      }
+				      document.removeEventListener('keydown', handleKeydown);
+				    }
+				  }
+				
+				  function closeMenu() {
+				    if (menu.classList.contains('visible')) {
+				      menuToggle.setAttribute('aria-expanded', false);
+				      menu.classList.remove('visible');
+				      if (previouslyFocusedElement) {
+				        previouslyFocusedElement.focus();
+				      }
+				      document.removeEventListener('keydown', handleKeydown);
+				    }
+				  }
+				
+				  function handleKeydown(event) {
+				    const isTabPressed = (event.key === 'Tab' || event.keyCode === 9);
+				    const isEscapePressed = (event.key === 'Escape' || event.keyCode === 27);
+				
+				    if (isEscapePressed) {
+				      closeMenu();
+				      return;
+				    }
+				
+				    if (!isTabPressed) {
+				      return;
+				    }
+				
+				    if (event.shiftKey) { // Shift + Tab
+				      if (document.activeElement === firstFocusableElement) {
+				        lastFocusableElement.focus();
+				        event.preventDefault();
+				      }
+				    } else { // Tab
+				      if (document.activeElement === lastFocusableElement) {
+				        firstFocusableElement.focus();
+				        event.preventDefault();
+				      }
+				    }
+				  }
+				
+				  menuToggle.addEventListener('click', toggleMenu);
+				  closeBtn.addEventListener('click', closeMenu);
+				
+				  // Optional: Close menu when a link inside it is clicked (assumes navigation)
+				  const menuLinks = menu.querySelectorAll('.links a');
+				  menuLinks.forEach(link => {
+				    link.addEventListener('click', closeMenu);
 				  });
 				
-				  closeBtn.addEventListener('click', () => {
-				    menu.hidden = true;
-				    menuToggle.setAttribute('aria-expanded', false);
-				  });
+				  // To ensure initial state is consistent with CSS, if you remove 'hidden'
+				  // In your CSS for #menu, ensure it starts with right: -100% (or display: none;)
+				  // and only becomes right: 0 (or display: block;) when .visible is present.
+				  // Example in CSS:
+				  // #menu { right: -100%; ... }
+				  // #menu.visible { right: 0; ... }
 				</script>
 
 			<!-- Banner -->
@@ -193,6 +269,7 @@
 
 	</body>
 </html>
+
 
 
 
